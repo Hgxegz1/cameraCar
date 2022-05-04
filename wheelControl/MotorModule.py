@@ -1,4 +1,4 @@
-import RPI.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
@@ -37,7 +37,7 @@ class Motor():
         GPIO.output(in3, GPIO.LOW)
         GPIO.output(in4, GPIO.HIGH)
         
-    def stop(self);
+    def stop(self):
         GPIO.output(in1, GPIO.LOW)
         GPIO.output(in2, GPIO.LOW)
         GPIO.output(in3, GPIO.LOW)
