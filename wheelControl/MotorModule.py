@@ -1,4 +1,4 @@
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
@@ -14,46 +14,32 @@ class Motor():
         GPIO.setup(self.in4, GPIO.OUT)
         
     def moveForward(self):
-        GPIO.output(in1, GPIO.HIGH)
-        GPIO.output(in2, GPIO.LOW)
-        GPIO.output(in3, GPIO.HIGH)
-        GPIO.output(in4, GPIO.LOW)
+        GPIO.output(self.in1, GPIO.HIGH)
+        GPIO.output(self.in2, GPIO.LOW)
+        GPIO.output(self.in3, GPIO.HIGH)
+        GPIO.output(self.in4, GPIO.LOW)
         
     def moveBackward(self):
-        GPIO.output(in1, GPIO.LOW)
-        GPIO.output(in2, GPIO.HIGH)
-        GPIO.output(in3, GPIO.LOW)
-        GPIO.output(in4, GPIO.HIGH)
+        GPIO.output(self.in1, GPIO.LOW)
+        GPIO.output(self.in2, GPIO.HIGH)
+        GPIO.output(self.in3, GPIO.LOW)
+        GPIO.output(self.in4, GPIO.HIGH)
         
     def moveLeft(self):
-        GPIO.output(in1, GPIO.LOW)
-        GPIO.output(in2, GPIO.HIGH)
-        GPIO.output(in3, GPIO.HIGH)
-        GPIO.output(in4, GPIO.LOW)
+        GPIO.output(self.in1, GPIO.LOW)
+        GPIO.output(self.in2, GPIO.HIGH)
+        GPIO.output(self.in3, GPIO.HIGH)
+        GPIO.output(self.in4, GPIO.LOW)
         
     def moveRight(self):
-        GPIO.output(in1, GPIO.HIGH)
-        GPIO.output(in2, GPIO.LOW)
-        GPIO.output(in3, GPIO.LOW)
-        GPIO.output(in4, GPIO.HIGH)
+        GPIO.output(self.in1, GPIO.HIGH)
+        GPIO.output(self.in2, GPIO.LOW)
+        GPIO.output(self.in3, GPIO.LOW)
+        GPIO.output(self.in4, GPIO.HIGH)
         
     def stop(self):
-        GPIO.output(in1, GPIO.LOW)
-        GPIO.output(in2, GPIO.LOW)
-        GPIO.output(in3, GPIO.LOW)
-        GPIO.output(in4, GPIO.LOW)
-
-in1 = 24
-in2 = 23
-in3 = 17
-in4 = 27
-
-temp1 = 1
-
-motors = Motor(in1, in2, in3, in4)
-motors.moveForward()
-motors.moveBackward()
-motors.moveLeft()
-motors.moveRight()
-
+        GPIO.output(self.in1, GPIO.LOW)
+        GPIO.output(self.in2, GPIO.LOW)
+        GPIO.output(self.in3, GPIO.LOW)
+        GPIO.output(self.in4, GPIO.LOW)
 
